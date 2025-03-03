@@ -1,2 +1,104 @@
 # TUCANCHA
 Archivo html del proyecto de tucancha
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TU CANCHA - Reserva</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: #f0f2f5;
+        }
+        .nav {
+            background: #2c5282;
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .nav a:hover {
+            color: #90cdf4;
+        }
+        .header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://civideportes.com.co/wp-content/uploads/2019/08/Cancha-de-f%C3%BAtbol-11-768x512.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            margin-top: 60px;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .header p {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        .button-container {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .button-container a {
+            display: inline-block;
+            background: #2c5282;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: background 0.3s ease;
+        }
+        .button-container a:hover {
+            background: #2a4365;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+        </ul>
+    </nav>
+
+    <header id="inicio" class="header">
+        <h1>Bienvenido a TU CANCHA</h1>
+        <p>Tu lugar para vivir la pasión del fútbol</p>
+        <div class="button-container">
+            <a href="https://apex.oracle.com/pls/apex/r/kevins/reservas/reservas?session=115919054721188" target="_blank">
+                RESERVA AQUÍ
+            </a>
+        </div>
+    </header>
+</body>
+</html>
