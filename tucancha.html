@@ -1,102 +1,109 @@
+index.html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TU CANCHA - Reserva</title>
+    <title>TU CANCHA - Acceso</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
         }
         body {
             background: #f0f2f5;
-        }
-        .nav {
-            background: #2c5282;
-            padding: 1rem;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
         }
-        .nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-        .nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .nav a:hover {
-            color: #90cdf4;
-        }
-        .header {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('https://civideportes.com.co/wp-content/uploads/2019/08/Cancha-de-f%C3%BAtbol-11-768x512.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
-            padding: 8rem 2rem 4rem;
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             text-align: center;
-            margin-top: 60px;
-            min-height: 500px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            width: 300px;
         }
-        .header h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-        .header p {
-            font-size: 1.5rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        .button-container {
-            margin-top: 2rem;
-            text-align: center;
-        }
-        .button-container a {
-            display: inline-block;
+        button {
             background: #2c5282;
             color: white;
-            padding: 1rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: background 0.3s ease;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
-        .button-container a:hover {
-            background: #2a4365;
+        button:hover {
+            background: #1a365d;
         }
+        .hidden { display: none; }
     </style>
 </head>
 <body>
-    <nav class="nav">
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-        </ul>
-    </nav>
+    <div class="container" id="loginContainer">
+        <h2>Iniciar Sesión</h2>
+        <input type="email" id="loginEmail" placeholder="Correo electrónico" required>
+        <input type="password" id="loginPassword" placeholder="Contraseña" required>
+        <button onclick="login()">Entrar</button>
+        <p>¿No tienes cuenta? <a href="#" onclick="showRegister()">Regístrate</a></p>
+    </div>
 
-    <header id="inicio" class="header">
-        <h1>Bienvenido a TU CANCHA</h1>
-        <p>Tu lugar para vivir la pasión del fútbol</p>
-        <div class="button-container">
-            <a href="https://apex.oracle.com/pls/apex/r/kevins/reservas/reservas?session=115919054721188" target="_blank">
-                RESERVA AQUÍ
-            </a>
-        </div>
-    </header>
+    <div class="container hidden" id="registerContainer">
+        <h2>Registro</h2>
+        <input type="text" id="registerName" placeholder="Nombre" required>
+        <input type="email" id="registerEmail" placeholder="Correo electrónico" required>
+        <input type="password" id="registerPassword" placeholder="Contraseña" required>
+        <button onclick="register()">Registrarse</button>
+        <p>¿Ya tienes cuenta? <a href="#" onclick="showLogin()">Inicia Sesión</a></p>
+    </div>
+
+    <script>
+        function showRegister() {
+            document.getElementById('loginContainer').classList.add('hidden');
+            document.getElementById('registerContainer').classList.remove('hidden');
+        }
+
+        function showLogin() {
+            document.getElementById('registerContainer').classList.add('hidden');
+            document.getElementById('loginContainer').classList.remove('hidden');
+        }
+
+        function register() {
+            let name = document.getElementById('registerName').value;
+            let email = document.getElementById('registerEmail').value;
+            let password = document.getElementById('registerPassword').value;
+
+            if (name && email && password) {
+                localStorage.setItem('user', JSON.stringify({ name, email, password, reservas: [] }));
+                alert('Registro exitoso. Ahora inicia sesión.');
+                showLogin();
+            } else {
+                alert('Por favor, completa todos los campos.');
+            }
+        }
+
+        function login() {
+            let email = document.getElementById('loginEmail').value;
+            let password = document.getElementById('loginPassword').value;
+            let storedUser = JSON.parse(localStorage.getItem('user'));
+
+            if (storedUser && storedUser.email === email && storedUser.password === password) {
+                sessionStorage.setItem('loggedUser', JSON.stringify(storedUser));
+                window.location.href = 'reservas.html';
+            } else {
+                alert('Credenciales incorrectas.');
+            }
+        }
+    </script>
 </body>
 </html>
+
