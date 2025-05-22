@@ -7,31 +7,33 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <nav class="nav">
+        <div class="logo">
+            <img src="logo.png" alt="Logo TU CANCHA">
+            <span style="color:white; font-weight:bold;">TU CANCHA</span>
+        </div>
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="index.html">Inicio</a></li>
         </ul>
     </nav>
 
-    <header id="inicio" class="header">
+    <header class="header">
         <h1>Bienvenido a TU CANCHA</h1>
         <p>Tu lugar para vivir la pasión del fútbol</p>
         <div class="button-container">
-            <a href="https://apex.oracle.com/pls/apex/r/kevins/reservas/reservas?session=3944576473534" target="_blank">
-                RESERVA AQUÍ
-            </a>
+            <a href="https://apex.oracle.com/pls/apex/r/kevins/reservas/reservas?session=111955461194317" target="_blank">RESERVA AQUÍ</a>
         </div>
     </header>
-    
+
     <div class="container">
         <h2>Mis Reservas</h2>
         <ul class="reservas-list" id="reservasList"></ul>
-        <br><br>
         <button onclick="logout()">Cerrar Sesión</button>
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             let user = JSON.parse(sessionStorage.getItem('loggedUser'));
             if (!user) {
                 alert("Debes iniciar sesión primero.");
@@ -56,5 +58,6 @@
             window.location.href = "index.html";
         }
     </script>
+
 </body>
 </html>
