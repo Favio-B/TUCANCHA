@@ -18,21 +18,25 @@
         </ul>
     </nav>
 
-    <div class="container" id="loginContainer">
-        <h2>Iniciar Sesión</h2>
-        <input type="email" id="loginEmail" placeholder="Correo electrónico" required>
-        <input type="password" id="loginPassword" placeholder="Contraseña" required>
-        <button onclick="login()">Entrar</button>
-        <p>¿No tienes cuenta? <a href="#" onclick="showRegister()">Regístrate</a></p>
-    </div>
+    <div class="header header-login">
+        <div class="container" id="loginContainer">
+            <h2>Iniciar Sesión</h2>
+            <input type="email" id="loginEmail" placeholder="Correo electrónico" required>
+            <input type="password" id="loginPassword" placeholder="Contraseña" required>
+            <button onclick="login()">Entrar</button>
+            <p>¿No tienes cuenta?</p>
+            <button onclick="showRegister()">Registrarse</button>
+        </div>
 
-    <div class="container hidden" id="registerContainer">
-        <h2>Registro</h2>
-        <input type="text" id="registerName" placeholder="Nombre" required>
-        <input type="email" id="registerEmail" placeholder="Correo electrónico" required>
-        <input type="password" id="registerPassword" placeholder="Contraseña" required>
-        <button onclick="register()">Registrarse</button>
-        <p>¿Ya tienes cuenta? <a href="#" onclick="showLogin()">Inicia Sesión</a></p>
+        <div class="container hidden" id="registerContainer">
+            <h2>Registro</h2>
+            <input type="text" id="registerName" placeholder="Nombre" required>
+            <input type="email" id="registerEmail" placeholder="Correo electrónico" required>
+            <input type="password" id="registerPassword" placeholder="Contraseña" required>
+            <button onclick="register()">Registrarse</button>
+            <p>¿Ya tienes cuenta?</p>
+            <button onclick="showLogin()">Iniciar Sesión</button>
+        </div>
     </div>
 
     <script>
