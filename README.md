@@ -7,27 +7,24 @@ Se adjuntan los enlaces correspondientes a la documentación técnica y funciona
 El repositorio del proyecto TU CANCHA está organizado de la siguiente manera:
 
 static/
- ├── img/                  # Imágenes utilizadas en la plataforma (logos y fotos de canchas)
- │    ├── hayuelos.png
- │    ├── modelia.png
- │    ├── parque el ruby.png
- │    ├── SALITRE.png
- │    ├── villemar.png
- │    └── logo.png
- ├── js/                   # Archivos JavaScript para manejo de funcionalidades
- │    ├── login.js         # Lógica de inicio de sesión
- │    ├── registro.js      # Lógica de registro de usuarios
- │    └── reservar.js      # Lógica de reservas de canchas
-templates/                  # Plantillas HTML de la aplicación
- ├── 1_registro.html        # Página de registro de usuarios
- ├── 2_login.html           # Página de inicio de sesión
- ├── 3_bienvenida.html      # Página de bienvenida tras iniciar sesión
- ├── 4_reservar.html        # Página para realizar reservas
- └── editar_reserva.html    # Página para editar reservas existentes
-app.py                      # Archivo principal de la aplicación (backend con Flask)
-database.db                 # Base de datos SQLite con la información de usuarios y reservas
-schema.sql                  # Script de creación de la base de datos
+├── img/ Imágenes utilizadas en la plataforma (logos y fotos de canchas)
+│ ├── hayuelos.png
+│ ├── modelia.png
+│ ├── parque el ruby.png
+│ ├── SALITRE.png
+│ ├── villemar.png
+│ └── logo.png
+├── js/ Archivos JavaScript para manejo de funcionalidades
+│ ├── login.js Lógica de inicio de sesión
+│ ├── registro.js Lógica de registro de usuarios
+│ └── reservar.js Lógica de reservas de canchas
 
+templates/ Plantillas HTML de la aplicación
+├── 1_registro.html Página de registro de usuarios
+├── 2_login.html Página de inicio de sesión
+├── 3_bienvenida.html Página de bienvenida tras iniciar sesión
+├── 4_reservar.html Página para realizar reservas
+└── editar_reserva.html Página para editar reservas existentes
 
 Notas adicionales:
 La carpeta static/img contiene imágenes de las canchas disponibles para reservar.
