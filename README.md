@@ -26,6 +26,10 @@ templates/ Plantillas HTML de la aplicación
 ├── 4_reservar.html Página para realizar reservas
 └── editar_reserva.html Página para editar reservas existentes
 
+app.py Archivo principal de la aplicación (backend con Flask)
+database.db Base de datos SQLite con la información de usuarios y reservas
+schema.sql Script de creación de la base de datos
+
 Notas adicionales:
 La carpeta static/img contiene imágenes de las canchas disponibles para reservar.
 
