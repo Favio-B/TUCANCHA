@@ -29,7 +29,19 @@ templates/ Plantillas HTML de la aplicación
 app.py Archivo principal de la aplicación (backend con Flask)
 database.db Base de datos SQLite con la información de usuarios y reservas
 schema.sql Script de creación de la base de datos
+Instalar las dependencias:
 
+bash
+Copiar
+Editar
+pip install flask
+Ejecutar la aplicación:
+
+bash
+Copiar
+Editar
+python app.py
+Acceder a la plataforma:
 ## ✅ Requisitos previos
 
 - Python 3.x instalado
