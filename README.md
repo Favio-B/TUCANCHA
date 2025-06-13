@@ -1,11 +1,11 @@
-Descripción del Proyecto:
+# 🏆 TU CANCHA
 
-TU CANCHA es una plataforma web que permite a los usuarios reservar canchas de fútbol de manera fácil, rápida y sin intermediarios. El sistema ofrece funcionalidades como registro e inicio de sesión de usuarios, consulta de disponibilidad de canchas, gestión de reservas y administración de usuarios y canchas. Está diseñado para ser accesible desde dispositivos móviles y escritorio, con una interfaz intuitiva y segura.
+**TU CANCHA** es una plataforma web que permite a los usuarios reservar canchas de fútbol de manera fácil, rápida y sin intermediarios.  
+El sistema ofrece funcionalidades como registro e inicio de sesión de usuarios, consulta de disponibilidad de canchas, gestión de reservas y administración de usuarios y canchas.  
+Está diseñado para ser accesible desde dispositivos móviles y escritorio, con una interfaz intuitiva y segura.  
 El proyecto busca promover el deporte comunitario y facilitar la gestión de instalaciones deportivas, apoyándose en una arquitectura escalable y un modelo ágil de desarrollo.
-Se adjuntan los enlaces correspondientes a la documentación técnica y funcional del proyecto TU CANCHA, dividida en dos partes para una mejor organización y comprensión del desarrollo del sistema.
-📂 Estructura del Proyecto
-El repositorio del proyecto TU CANCHA está organizado de la siguiente manera:
 
+## 📂 Estructura del Proyecto
 static/
 ├── img/ Imágenes utilizadas en la plataforma (logos y fotos de canchas)
 │ ├── hayuelos.png
@@ -29,6 +29,27 @@ templates/ Plantillas HTML de la aplicación
 app.py Archivo principal de la aplicación (backend con Flask)
 database.db Base de datos SQLite con la información de usuarios y reservas
 schema.sql Script de creación de la base de datos
+
+## ✅ Requisitos previos
+
+- Python 3.x instalado
+- pip instalado
+- Recomendado: crear un entorno virtual (venv)
+
+## 🛠️ Tecnologías usadas
+
+- Python + Flask
+- HTML5 + CSS3 + JavaScript
+- SQLite
+- LocalStorage y SessionStorage para manejo de estado en el navegador
+
+## 🚀 Ejecución del Proyecto
+
+1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/Favio-B/TUCANCHA.git
+cd TUCANCHA
 
 Notas adicionales:
 La carpeta static/img contiene imágenes de las canchas disponibles para reservar.
