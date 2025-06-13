@@ -6,6 +6,7 @@ Está diseñado para ser accesible desde dispositivos móviles y escritorio, con
 El proyecto busca promover el deporte comunitario y facilitar la gestión de instalaciones deportivas, apoyándose en una arquitectura escalable y un modelo ágil de desarrollo.
 
 ## 📂 Estructura del Proyecto
+'''
 static/
 ├── img/ Imágenes utilizadas en la plataforma (logos y fotos de canchas)
 │ ├── hayuelos.png
@@ -25,7 +26,7 @@ templates/ Plantillas HTML de la aplicación
 ├── 3_bienvenida.html Página de bienvenida tras iniciar sesión
 ├── 4_reservar.html Página para realizar reservas
 └── editar_reserva.html Página para editar reservas existentes
-
+'''
 app.py Archivo principal de la aplicación (backend con Flask)
 database.db Base de datos SQLite con la información de usuarios y reservas
 schema.sql Script de creación de la base de datos
