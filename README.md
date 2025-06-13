@@ -73,8 +73,9 @@ Los archivos en static/js implementan la lógica de la aplicación en el cliente
 Las vistas (páginas web) están en templates/, siguiendo el flujo: registro → login → bienvenida → reserva.
 
 app.py actúa como el servidor que sirve las páginas y gestiona las rutas principales de la aplicación.
-🔗 Documentación Parte 1: https://docs.google.com/document/d/15c38m25QaABokXzHGOvgOSP50tmCd8YDfjw46I79sj0/edit?usp=sharing
 
+
+🔗 Documentación Parte 1: https://docs.google.com/document/d/15c38m25QaABokXzHGOvgOSP50tmCd8YDfjw46I79sj0/edit?usp=sharing
 🔗 Documentación Parte 2: https://docs.google.com/document/d/1sjwNEq5OkoIOw7wAbyo0hHKyy2dNDR70ioUZMSYYjE0/edit?usp=sharing
 
 Estos documentos contienen toda la información relacionada con la planificación, modelado, codificación, pruebas y visión futura del proyecto.
