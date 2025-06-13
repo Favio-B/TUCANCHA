@@ -26,43 +26,44 @@ templates/ Plantillas HTML de la aplicación
 ├── 3_bienvenida.html Página de bienvenida tras iniciar sesión
 ├── 4_reservar.html Página para realizar reservas
 └── editar_reserva.html Página para editar reservas existentes
-```
+
 app.py Archivo principal de la aplicación (backend con Flask)
 database.db Base de datos SQLite con la información de usuarios y reservas
 schema.sql Script de creación de la base de datos
-Instalar las dependencias:
-
-bash
-Copiar
-Editar
-pip install flask
-Ejecutar la aplicación:
-
-bash
-Copiar
-Editar
-python app.py
-Acceder a la plataforma:
+```
 ## ✅ Requisitos previos
-
 - Python 3.x instalado
 - pip instalado
 - Recomendado: crear un entorno virtual (venv)
-
 ## 🛠️ Tecnologías usadas
-
 - Python + Flask
 - HTML5 + CSS3 + JavaScript
 - SQLite
 - LocalStorage y SessionStorage para manejo de estado en el navegador
-
 ## 🚀 Ejecución del Proyecto
-
 1. Clonar el repositorio:
-
 ```bash
 git clone https://github.com/Favio-B/TUCANCHA.git
 cd TUCANCHA
+```
+2. Instalar Dependencias
+```
+pip install flask
+```
+3.Ejecutar Aplicación
+```
+python app.py
+```
+📌 Flujo de la aplicación
+El usuario inicia en la página de registro (1_registro.html) o login (2_login.html).
+
+Una vez autenticado, es redirigido a la página de bienvenida (3_bienvenida.html).
+
+Desde allí puede gestionar sus reservas en 4_reservar.html o editar reservas existentes en editar_reserva.html.
+
+Las imágenes de las canchas se encuentran en static/img/ y son mostradas en las diferentes vistas.
+
+La lógica de frontend (validación, registro, login, reservas) está implementada en static/js/.
 
 Notas adicionales:
 La carpeta static/img contiene imágenes de las canchas disponibles para reservar.
