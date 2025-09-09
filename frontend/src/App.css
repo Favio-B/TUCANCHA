@@ -1,0 +1,123 @@
+/* Custom styles for Tu Cancha */
+body {
+  background-color: #121714;
+  font-family: 'Public Sans', 'Noto Sans', sans-serif;
+  color: white;
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  background-color: #121714;
+}
+
+/* Form styles */
+.form-control {
+  background-color: #2e352c;
+  border: 1px solid #3a4539;
+  color: white;
+}
+
+.form-control:focus {
+  background-color: #2e352c;
+  border-color: #3a4539;
+  box-shadow: none;
+  color: white;
+}
+
+.form-control::placeholder {
+  color: #a2b4a9;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #94e0b1;
+  border: none;
+  color: #121714;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #7bd1a2;
+  color: #121714;
+}
+
+.btn-secondary {
+  background-color: #2e352c;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-secondary:hover {
+  background-color: #3a4539;
+  color: white;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border: none;
+  color: #121714;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+}
+
+/* Card styles */
+.card {
+  background-color: #1d221e;
+  border: none;
+}
+
+/* Table styles */
+.table {
+  color: white;
+}
+
+.table th {
+  background-color: #1e2520;
+  color: #a2b4a9;
+  border-color: #2e352c;
+}
+
+.table td {
+  border-color: #2e352c;
+}
+
+.table tbody tr:hover {
+  background-color: #1b1f1c;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: transparent;
+  border-bottom: 1px solid #2e352c;
+}
+
+/* Slider styles */
+.slider-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 30s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.slider-track > div {
+  min-width: 300px;
+  margin-right: 1rem;
+}
