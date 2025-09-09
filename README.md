@@ -7,72 +7,131 @@ El proyecto busca promover el deporte comunitario y facilitar la gestión de ins
 
 ## 📂 Estructura del Proyecto
 ```
-static/
-├── img/ Imágenes utilizadas en la plataforma (logos y fotos de canchas)
-│ ├── hayuelos.png
-│ ├── modelia.png
-│ ├── parque el ruby.png
-│ ├── SALITRE.png
-│ ├── villemar.png
-│ └── logo.png
-├── js/ Archivos JavaScript para manejo de funcionalidades
-│ ├── login.js Lógica de inicio de sesión
-│ ├── registro.js Lógica de registro de usuarios
-│ └── reservar.js Lógica de reservas de canchas
-
-templates/ Plantillas HTML de la aplicación
-├── 1_registro.html Página de registro de usuarios
-├── 2_login.html Página de inicio de sesión
-├── 3_bienvenida.html Página de bienvenida tras iniciar sesión
-├── 4_reservar.html Página para realizar reservas
-└── editar_reserva.html Página para editar reservas existentes
-
-app.py Archivo principal de la aplicación (backend con Flask)
-database.db Base de datos SQLite con la información de usuarios y reservas
-schema.sql Script de creación de la base de datos
+TUCANCHA/
+├── app.py                    # Servidor Flask (backend)
+├── database.db              # Base de datos SQLite
+├── schema.sql               # Script de creación de la base de datos
+├── README.md                # Este archivo
+└── frontend/                # Aplicación React (frontend)
+    ├── public/              # Archivos públicos
+    │   ├── img/             # Imágenes de canchas
+    │   │   ├── hayuelos.png
+    │   │   ├── modelia.png
+    │   │   ├── parque el ruby.png
+    │   │   ├── SALITRE.png
+    │   │   ├── villemar.png
+    │   │   └── logo.png
+    │   ├── index.html       # Plantilla HTML principal
+    │   └── manifest.json    # Configuración PWA
+    ├── src/                 # Código fuente React
+    │   ├── components/      # Componentes React
+    │   │   ├── Bienvenida.js
+    │   │   ├── EditarReserva.js
+    │   │   ├── Login.js
+    │   │   ├── Register.js
+    │   │   └── Reservar.js
+    │   ├── App.js           # Componente principal
+    │   └── index.js         # Punto de entrada
+    ├── build/               # Build de producción (generado)
+    ├── package.json         # Dependencias del frontend
+    └── README.md            # Documentación del frontend
 ```
 ## ✅ Requisitos previos
 - Python 3.x instalado
 - pip instalado
+- Node.js 14+ instalado
+- npm instalado
 - Recomendado: crear un entorno virtual (venv)
+
 ## 🛠️ Tecnologías usadas
+### Backend
 - Python + Flask
-- HTML5 + CSS3 + JavaScript
 - SQLite
-- LocalStorage y SessionStorage para manejo de estado en el navegador
+- Flask-Mail para notificaciones por correo
+
+### Frontend
+- React 18+
+- JavaScript ES6+
+- CSS3
+- React Router para navegación SPA
+
+### Herramientas
+- Create React App
+- npm para gestión de dependencias
 ## 🚀 Ejecución del Proyecto
-1. Clonar el repositorio:
+
+### 1. Clonar el repositorio
 ```bash
 git clone https://github.com/Favio-B/TUCANCHA.git
 cd TUCANCHA
 ```
-2. Instalar Dependencias
+
+### 2. Configurar Backend (Flask)
+```bash
+# Crear entorno virtual (recomendado)
+python -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
+
+# Instalar dependencias del backend
+pip install flask flask-mail
 ```
-pip install flask
+
+### 3. Configurar Frontend (React)
+```bash
+# Navegar a la carpeta del frontend
+cd frontend
+
+# Instalar dependencias de React
+npm install
+
+# Construir la aplicación para producción
+npm run build
+
+# Volver al directorio raíz
+cd ..
 ```
-3.Ejecutar Aplicación
-```
+
+### 4. Ejecutar la aplicación
+```bash
+# Desde el directorio raíz del proyecto
 python app.py
 ```
-📌 Flujo de la aplicación
-El usuario inicia en la página de registro (1_registro.html) o login (2_login.html).
 
-Una vez autenticado, es redirigido a la página de bienvenida (3_bienvenida.html).
+La aplicación estará disponible en: `http://localhost:5000`
 
-Desde allí puede gestionar sus reservas en 4_reservar.html o editar reservas existentes en editar_reserva.html.
+### 🔧 Desarrollo
+Para desarrollo con hot-reload del frontend:
+```bash
+# Terminal 1: Backend
+python app.py
 
-Las imágenes de las canchas se encuentran en static/img/ y son mostradas en las diferentes vistas.
+# Terminal 2: Frontend (en la carpeta frontend/)
+npm start
+```
+## 📌 Flujo de la aplicación
 
-La lógica de frontend (validación, registro, login, reservas) está implementada en static/js/.
+La aplicación es una **Single Page Application (SPA)** construida con React que se comunica con un backend Flask a través de APIs REST.
 
-Notas adicionales:
-La carpeta static/img contiene imágenes de las canchas disponibles para reservar.
+### Navegación
+- **`/`** - Página principal (redirige a login si no está autenticado)
+- **`/login`** - Página de inicio de sesión
+- **`/register`** - Página de registro de usuarios
+- **`/bienvenida`** - Dashboard principal (requiere autenticación)
+- **`/reservar_page`** - Página para crear nuevas reservas
+- **`/editar_reserva/:id`** - Página para editar reservas existentes
 
-Los archivos en static/js implementan la lógica de la aplicación en el cliente.
+### Flujo de usuario
+1. **Registro/Login**: El usuario se registra o inicia sesión
+2. **Autenticación**: El backend valida las credenciales y crea una sesión
+3. **Dashboard**: Una vez autenticado, accede al panel principal donde puede ver sus reservas
+4. **Gestión de reservas**: Puede crear nuevas reservas o editar las existentes
+5. **Notificaciones**: Recibe confirmaciones por correo electrónico
 
-Las vistas (páginas web) están en templates/, siguiendo el flujo: registro → login → bienvenida → reserva.
-
-app.py actúa como el servidor que sirve las páginas y gestiona las rutas principales de la aplicación.
+### Arquitectura
+- **Frontend**: React maneja la interfaz de usuario y el enrutamiento
+- **Backend**: Flask sirve las APIs REST y maneja la lógica de negocio
+- **Base de datos**: SQLite almacena usuarios y reservas
+- **Comunicación**: JSON a través de APIs REST entre frontend y backend
 
 
 🔗 Documentación Parte 1: https://docs.google.com/document/d/15c38m25QaABokXzHGOvgOSP50tmCd8YDfjw46I79sj0/edit?usp=sharing
