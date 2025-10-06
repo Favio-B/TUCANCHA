@@ -12,6 +12,11 @@ TUCANCHA/
 ├── database.db              # Base de datos SQLite
 ├── schema.sql               # Script de creación de la base de datos
 ├── README.md                # Este archivo
+├── node/                    # Servicio Node + Express (TypeScript)
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── src/
+│       └── server.ts
 └── frontend/                # Aplicación React (frontend)
     ├── public/              # Archivos públicos
     │   ├── img/             # Imágenes de canchas
@@ -77,11 +82,11 @@ python -m venv venv
 source venv/bin/activate  # En Windows: venv\Scripts\activate
 
 # Instalar dependencias del backend
-pip install flask flask-mail
+pip install -r requirements.txt
 ```
 
 ### 3. Configurar Frontend (React)
-```bashnom
+```bash
 # Navegar a la carpeta del frontend
 cd frontend
 
@@ -154,4 +159,3 @@ La aplicación es una **Single Page Application (SPA)** construida con React que
 Documentación Parte 1: https://docs.google.com/document/d/15c38m25QaABokXzHGOvgOSP50tmCd8YDfjw46I79sj0/edit?usp=sharing
 Documentación Parte 2: https://docs.google.com/document/d/1sjwNEq5OkoIOw7wAbyo0hHKyy2dNDR70ioUZMSYYjE0/edit?usp=sharing
 
-Estos documentos contienen toda la información relacionada con la planificación, modelado, codificación, pruebas y visión futura del proyecto.
