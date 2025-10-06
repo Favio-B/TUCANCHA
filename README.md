@@ -1,11 +1,11 @@
-# 🏆 TU CANCHA
+# TU CANCHA
 
 **TU CANCHA** es una plataforma web que permite a los usuarios reservar canchas de fútbol de manera fácil, rápida y sin intermediarios.  
 El sistema ofrece funcionalidades como registro e inicio de sesión de usuarios, consulta de disponibilidad de canchas, gestión de reservas y administración de usuarios y canchas.  
 Está diseñado para ser accesible desde dispositivos móviles y escritorio, con una interfaz intuitiva y segura.  
 El proyecto busca promover el deporte comunitario y facilitar la gestión de instalaciones deportivas, apoyándose en una arquitectura escalable y un modelo ágil de desarrollo.
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 ```
 TUCANCHA/
 ├── app.py                    # Servidor Flask (backend)
@@ -36,14 +36,14 @@ TUCANCHA/
     ├── package.json         # Dependencias del frontend
     └── README.md            # Documentación del frontend
 ```
-## ✅ Requisitos previos
+## Requisitos previos
 - Python 3.x instalado
 - pip instalado
 - Node.js 14+ instalado
 - npm instalado
 - Recomendado: crear un entorno virtual (venv)
 
-## 🛠️ Tecnologías usadas
+## Tecnologías usadas
 ### Backend
 - Python + Flask
 - SQLite
@@ -54,11 +54,15 @@ TUCANCHA/
 - JavaScript ES6+
 - CSS3
 - React Router para navegación SPA
+ - Bootstrap 5
 
 ### Herramientas
 - Create React App
 - npm para gestión de dependencias
-## 🚀 Ejecución del Proyecto
+
+### Servicio adicional (nuevo)
+- Node.js + Express (TypeScript) como gateway/proxy opcional al backend Flask
+## Ejecución del Proyecto
 
 ### 1. Clonar el repositorio
 ```bash
@@ -77,7 +81,7 @@ pip install flask flask-mail
 ```
 
 ### 3. Configurar Frontend (React)
-```bash
+```bashnom
 # Navegar a la carpeta del frontend
 cd frontend
 
@@ -99,7 +103,7 @@ python app.py
 
 La aplicación estará disponible en: `http://localhost:5000`
 
-### 🔧 Desarrollo
+### Desarrollo
 Para desarrollo con hot-reload del frontend:
 ```bash
 # Terminal 1: Backend
@@ -108,7 +112,20 @@ python app.py
 # Terminal 2: Frontend (en la carpeta frontend/)
 npm start
 ```
-## 📌 Flujo de la aplicación
+
+### 5. Servicio Node + Express (TypeScript)
+
+Opcionalmente puede ejecutar un gateway en Node que proxyea solicitudes hacia Flask.
+
+```bash
+# En una tercera terminal
+cd node
+npm install
+npm run dev
+```
+
+Por defecto arranca en `http://localhost:4000` y expone rutas bajo `/api/*` que redirigen al Flask en `http://localhost:5000`.
+## Flujo de la aplicación
 
 La aplicación es una **Single Page Application (SPA)** construida con React que se comunica con un backend Flask a través de APIs REST.
 
@@ -134,7 +151,7 @@ La aplicación es una **Single Page Application (SPA)** construida con React que
 - **Comunicación**: JSON a través de APIs REST entre frontend y backend
 
 
-🔗 Documentación Parte 1: https://docs.google.com/document/d/15c38m25QaABokXzHGOvgOSP50tmCd8YDfjw46I79sj0/edit?usp=sharing
-🔗 Documentación Parte 2: https://docs.google.com/document/d/1sjwNEq5OkoIOw7wAbyo0hHKyy2dNDR70ioUZMSYYjE0/edit?usp=sharing
+Documentación Parte 1: https://docs.google.com/document/d/15c38m25QaABokXzHGOvgOSP50tmCd8YDfjw46I79sj0/edit?usp=sharing
+Documentación Parte 2: https://docs.google.com/document/d/1sjwNEq5OkoIOw7wAbyo0hHKyy2dNDR70ioUZMSYYjE0/edit?usp=sharing
 
 Estos documentos contienen toda la información relacionada con la planificación, modelado, codificación, pruebas y visión futura del proyecto.

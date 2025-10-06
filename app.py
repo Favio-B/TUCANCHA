@@ -1,10 +1,12 @@
 from flask import Flask, request, redirect, url_for, session, jsonify, g, send_from_directory
 from flask_mail import Mail, Message
+from flask_cors import CORS
 import sqlite3
 import hashlib
 import os
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 app.secret_key = os.urandom(24)
 DATABASE = 'database.db'
 
@@ -226,13 +228,13 @@ def submit_reservation():
             recipients=[email],
             body=f"""Hola {nombre},
 
-Tu reserva ha sido confirmada ✅
+Tu reserva ha sido confirmada
 
-📍 Ubicación: {ubicacion}
-📅 Fecha: {fecha}
-⏰ Hora: {hora}
+Ubicación: {ubicacion}
+Fecha: {fecha}
+Hora: {hora}
 
-Gracias por reservar con Tu Cancha ⚽
+Gracias por reservar con Tu Cancha
 """)
         mail.send(msg)
 
